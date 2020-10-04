@@ -1,0 +1,125 @@
+% !TeX encoding = windows-1251
+\documentclass[a4paper,12pt]{article}
+\usepackage[mag=980]{newlistok}
+\graphicspath{{pdfpict/}}
+
+
+\УвеличитьВысоту{2.5cm}
+\УвеличитьШирину{1.8cm}
+
+
+\Заголовок{Двойное отношение}
+\НомерЛистка{GM-4}
+\ДатаЛистка{01.2017}
+
+\expandafter\def\expandafter\normalsize\expandafter{%
+    \normalsize
+    \setlength\abovedisplayskip{2pt}
+    \setlength\belowdisplayskip{2pt}
+    \setlength\abovedisplayshortskip{2pt}
+    \setlength\belowdisplayshortskip{1pt}
+}
+\sloppy
+
+\usepackage{ifthen}
+\usepackage[noadjust]{marginnote}
+\newcommand{\rightpicture}[4]%
+{\ifthenelse{\lengthtest{10mm>#3mm}}%
+{\marginnote{\hbox to #1 {\hss\includegraphics[scale=#3]{#4}}}[-#2]}%
+{\marginnote{\hbox to #1 {\hss\includegraphics[width=#3]{#4}}}[-#2]}}
+\newcommand{\leftpicture}[4]%
+{\ifthenelse{\lengthtest{10mm>#3mm}}%
+{\reversemarginpar\marginnote{\hbox to -#1 {\includegraphics[scale=#3]{#4}\hss}}[-#2]\normalmarginpar}%
+{\reversemarginpar\marginnote{\hbox to -#1 {\includegraphics[width=#3]{#4}\hss}}[-#2]\normalmarginpar}}
+
+
+\begin{document}
+\СоздатьЗаголовок
+
+
+\опр Пусть $A,B,C,D$~--- точки на одной прямой $l$, причём
+$\{A,B\}\cap\{C,D\} = \emptyset$. Их \выд{двойным отношением}
+называется
+  $$
+  [A,B,C,D] = \frac{CA}{CB}:\frac{DA}{DB},
+  $$
+где отношение отрезков берется со знаком. Если одна из точек
+является бесконечно удалённой, то двойное отношение равно
+\выд{простому} отношению остальных трёх точек, то есть, например,
+$[A,B,C,\infty] = CA : CB$, и т.~п.
+
+Пусть $a,b,c,d$~--- прямые в плоскости $\pi$, проходящие через
+(конечную) точку $O$, причём $\{a,b\}\cap\{c,d\} = \emptyset$. Их
+\выд{двойным отношением} называется
+  $$
+  [a,b,c,d] = \frac{\sin\angle ca}{\sin\angle cb} : \frac{\sin\angle
+  da}{\sin\angle db},
+  $$
+где на каждой прямой выбрано направление и угол между прямыми~---
+это угол, отсчитанный против часовой стрелки от выбранного
+направления на первой прямой до выбранного направления на второй
+прямой. \копр
+
+\задача Пусть $a,b,c,d$~--- прямые в плоскости $\pi$, проходящие
+через точку $O$, причём\break $\{a,b\}\cap\{c,d\} = \emptyset$,
+прямая $l\subset\pi$ не проходит через $O$, а точки $A,B,C,D$ суть
+точки пересечения прямой $l$ с прямыми $a,b,c,d$ соответственно.
+Докажите, что $[a,b,c,d] = [A,B,C,D]$. \кзадача
+
+\задача Докажите, что двойные отношения сохраняются при проективных
+преобразованиях. \кзадача
+
+\задача Как меняется двойное отношение $[A,B,C,D]$ при перестановках
+точек $A,B,C,D$? Сколько различных значений двойного отношения так
+получается (для точек в общем положении)? \кзадача
+
+\УстановитьГраницы{0cm}{75mm}
+\rightpicture{0mm}{0mm}{75mm}{proj_geom-5}
+\задача Пусть на проективной
+плоскости $\bar\pi$ выбраны прямые $k,l,m,n$, никакие три из которых
+не конкурентны. Пусть $A = k\cap l$, $B = m\cap n$, $E = k\cap m$,
+$F = k\cap n$, $G = l\cap m$, $H = l\cap n$, $C = AB\cap EH$, $D =
+AB\cap FG$. Докажите, что $[A,B,C,D] = -1$ (точки $C$ и $D$
+\выд{гармонически сопряжены} относительно отрезка $AB$). \кзадача
+
+\задача[Проективная теорема Чевы]\label{Ceva} Пусть $A,B,C$~--- три
+точки, не лежащие на одной прямой, $D$ и $E$~--- любые точки, не
+принадлежащие прямым $AB$, $AC$ и $BC$. Докажите, что
+  $$
+  [AD,AE,AB,AC] \cdot [BD,BE,BC,BA] \cdot [CD,CE,CA,CB] = 1.
+  $$
+\кзадача
+\ВосстановитьГраницы
+
+\задача[Теорема Чевы] На сторонах $AB$, $AC$ и $BC$ треугольника
+$ABC$ (или на продолжениях этих сторон) выбрали соответственно точки
+$C'$, $B'$ и $A'$. Выведите из задачи \ref{Ceva}, что прямые $AA'$,
+$BB'$ и $CC'$ конкурентны тогда и только тогда, когда
+  $$
+  \frac{BA'}{CA'} \cdot \frac{AC'}{BC'} \cdot \frac{CB'}{AB'} = -1.
+  $$
+(Отношения отрезков берутся со знаком!) \кзадача
+
+\задача[Теорема Чевы в углах] На сторонах $AB$, $AC$ и $BC$
+треугольника $ABC$ (или на продолжениях этих сторон) выбрали
+соответственно точки $C'$, $B'$ и $A'$. Выведите из задачи
+\ref{Ceva}, что прямые $AA'$, $BB'$ и $CC'$ конкурентны тогда и
+только тогда, когда
+  $$
+  \frac{\sin\angle BAA'}{\sin\angle CAA'}\cdot \frac{\sin\angle
+  ACC'}{\sin\angle BCC'}\cdot \frac{\sin\angle CBB'}{\sin\angle
+  ABB'} = -1.
+  $$
+(Углы берутся со знаком!) \кзадача
+
+\задача Пусть в окружность вписан шестиугольник $ABCDEF$, причём
+  $$
+  \frac{AB\cdot CD\cdot EF}{BC\cdot DE\cdot FA} = 1.
+  $$
+Докажите, что диагонали $AD$, $BE$ и $CF$ конкурентны. \кзадача
+
+
+
+\ЛичныйКондуит{0mm}{6mm}
+
+\end{document}
